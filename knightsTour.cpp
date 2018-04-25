@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 #define N 10
 using namespace std;
 
@@ -45,11 +46,11 @@ int main()
         visited[i][j]=false;
     }
     kTour(arr,0,0,n,1,visited);
-    for(int i=0;i<n;i++)
-    {   cout.precision(2);
+    for(int i=n-1;i>=0;i--)
+    {   
         for(int j=0;j<n;j++)
         {
-            cout<<arr[i][j]<<" ";
+            cout<<setw(2)<<arr[i][j]<<" ";
         }
         cout<<endl;
     }
