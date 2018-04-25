@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ''' Program make a simple calculator that can add, subtract, multiply and divide using functions '''
 
 # This function adds two numbers 
@@ -43,4 +41,3 @@ elif choice == '4':
    print(num1,"/",num2,"=", divide(num1,num2))
 else:
    print("Invalid input")
->>>>>>> cd4f52610a2a914112c56f0ea6fce6ce95447935
