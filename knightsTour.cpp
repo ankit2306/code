@@ -36,7 +36,7 @@ int main()
     cin>>n;
     if(n>N)
     {
-        cout<<"Invalid input<<endl";
+        cout<<"Invalid input !!!"<<endl;
         return 0;
     }
     for(int i=0;i<n;i++)
