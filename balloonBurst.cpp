@@ -8,6 +8,18 @@ void shootBalloon(int score,int i,bool shot[],int arr[],int numShot,int n,int *m
     order[numShot-1]=arr[i];
    // cout<<(int)shot[i];
    // cout<<" "<<order[numShot-1]<<endl;
+    if(numShot==n)
+    {
+        if(score+arr[i]>(*maxScore))
+        {
+            *maxScore=score+arr[i];
+            for(int k=0;k<n;k++)
+                storeOrder[k]=order[k];
+        }
+        shot[i]=false;
+        order[numShot-1]=0;
+        return;
+    }
 
     int left,right;
     for(left=i-1;left>=0;left--)
@@ -24,25 +36,12 @@ void shootBalloon(int score,int i,bool shot[],int arr[],int numShot,int n,int *m
     score+=arr[left]*arr[right];
     //cout<<left<<" "<<right<<endl;
 
-    if(numShot==n)
-    {
-        if(score>(*maxScore))
-        {
-            *maxScore=score;
-            for(int k=0;k<n;k++)
-                storeOrder[k]=order[k];
-        }
-        shot[i]=false;
-        order[numShot-1]=0;
-        return;
-    }
-
     for(int j=1;j<=n;j++)
     {
         if((shot[j]==false) && (numShot<n))
         {
-            cout<<j<<endl;
-            shootBalloon(score+arr[left]*arr[right],j,shot,arr,numShot+1,n,maxScore,order,storeOrder);
+            //cout<<j<<endl;
+            shootBalloon(score,j,shot,arr,numShot+1,n,maxScore,order,storeOrder);
         }
     }
     shot[i]=false;
@@ -73,9 +72,9 @@ int main()
 */
     for(int i=1;i<=n;i++)
     {   
-        shootBalloon(0,1,shot,arr,1,n,&maxScore,order,storeOrder);
+        shootBalloon(0,i,shot,arr,1,n,&maxScore,order,storeOrder);
     }
-    cout<<maxScore<<endl;
+    cout<<"Maximum Score = "<<maxScore<<endl<<"Burst Order:\n";
     for(int i=0;i<n;i++)
         cout<<storeOrder[i]<<" ";
     cout<<endl;
