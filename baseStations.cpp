@@ -62,6 +62,53 @@ void dfs(int cell[][N],int row,int col,int depth,int score,int *maxScore,bool vi
     visited[row][col]=false;
 }
 
+void bfs(int cell[][N],int row,int col,int depth,int score,int *maxScore,bool visited[][N],int n,int m)
+{
+    visited[row][col]=true;
+    score+=cell[row][col];
+    if(depth==1)
+    {
+        if(score>*maxScore)
+            *maxScore=score;
+        while(!st.empty())
+            st.pop();
+        visited[row][col]=false;
+        return;
+    }
+    if(col%2==0)
+    {
+        for(int i=0;i<6;i++)
+        {
+            int x_n=row+r_even[i];
+            int y_n=col+c_even[i];
+            if(isSafe(x_n,y_n,n,m,visited))
+            {
+                //dfs(cell,x_n,y_n,depth-1,score,maxScore,visited,n,m);
+                st.push(make_pair(x_n,y_n));
+            }
+        }
+    }
+
+    else
+    {
+        for(int i=0;i<6;i++)
+        {
+            int x_n=row+r_odd[i];
+            int y_n=col+c_odd[i];
+            if(isSafe(x_n,y_n,n,m,visited))
+            {
+                dfs(cell,x_n,y_n,depth-1,score,maxScore,visited,n,m);
+                //st.push(make_pair(x_n,y_n));
+            }
+        }
+    }
+    /*int x=st.top().first;
+    int y=st.top().second;
+    st.pop();
+    dfs(cell,x,y,depth-1,score,maxScore,visited,n,m);*/
+    visited[row][col]=false;
+}
+
 int main()
 {
     int m,n,maxScore=INT_MIN;
