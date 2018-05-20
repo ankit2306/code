@@ -10,14 +10,14 @@
         <h1>
             Hotel Room Reservation
         </h1>
-        
-        <table border="1" cellspacing="5" cellpadding="3" required>
+        <form action="form.html" method="POST">
+        <table border="1" cellspacing="5" cellpadding="3">
             <tr>
                 <td>
                     Name<sup>*</sup>
                 </td>
                 <td>
-                    <input type="text" placeholder="Enter Name">
+                    <input type="text" name="Name" placeholder="Enter Name" required/>
                 </td>
             </tr>
             
@@ -26,7 +26,7 @@
                     Address<sup>*</sup>
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name="Address" required/>
                 </td>
             </tr>
             
@@ -35,8 +35,8 @@
                     Gender<sup>*</sup>
                 </td>
                 <td>
-                    <input type="radio" value="Male">
-                    <input type="radio" value="Female">
+                    Male<input type="radio" name="Gender" value="Male" required/>
+                    Female<input type="radio" name="Gender" value="Female" required/>
                 </td>
             </tr>
             
@@ -45,7 +45,7 @@
                     Contact No<sup>*</sup>
                 </td>
                 <td>
-                    <input type="tel" placeholder="10 digits">
+                    <input type="tel" name="Contact" placeholder="10 digits" pattern="[7-9]{1}[0-9]{9}" required/>
                 </td>
             </tr>
             
@@ -54,7 +54,7 @@
                     Email Address<sup>*</sup>
                 </td>
                 <td>
-                    <input type="email" placeholder="abc@xyz.com">
+                    <input type="email" name="Email" placeholder="abc@xyz.com" required/>
                 </td>
             </tr>
             
@@ -63,7 +63,7 @@
                     No of Persons<sup>*</sup>
                 </td>
                 <td>
-                    <input type="num">
+                    <input type="number" name="Persons" required/>
                 </td>
             </tr>
             
@@ -72,7 +72,7 @@
                     No of Days<sup>*</sup>
                 </td>
                 <td>
-                    <input type="num">
+                    <input type="number" name="Days" required/>
                 </td>
             </tr>
             
@@ -81,7 +81,7 @@
                     Check-in Date<sup>*</sup>
                 </td>
                 <td>
-                    <input type="date" placeholder="dd/mm//yyyy">
+                    <input type="date" placeholder="dd/mm//yyyy" name="Check-in" required/>
                 </td>
             </tr>
             
@@ -90,7 +90,7 @@
                     Check-out Date<sup>*</sup>
                 </td>
                 <td>
-                    <input type="date" placeholder="dd/mm//yyyy">
+                    <input type="date" placeholder="dd/mm//yyyy" name="Check-out" required/>
                 </td>
             </tr>
             
@@ -99,9 +99,9 @@
                     Room Type<sup>*</sup>
                 </td>
                 <td>
-                    <input type="radio" name="room type" value="Suite"><br>
-                    <input type="radio" value="Super Deluxe"><br>
-                    <input type="radio" value ="Deluxe">
+                   <input type="radio" name="room type" value="Suite" required/>Suite<br>
+                    <input type="radio" name="room type" value="Super Deluxe" required/>Super Deluxe<br>
+                    <input type="radio" name="room type" value ="Deluxe" required/>Deluxe
                 </td>
             </tr>
             
@@ -110,19 +110,20 @@
                     No of Rooms<sup>*</sup>
                 </td>
                 <td>
-                    <input type="num">
+                    <input type="number" name="Rooms" required/>
                 </td>
             </tr>
             
             <tr>
                 <td>
-                    <input type="submit" method="post" value="Block the Room">
+                    <input type="submit" value="Block the Room"/>
                 </td>
                 <td>
-                    <input type="reset" value="Clear" >
+                    <input type="reset" value="Clear"/>
                 </td>
             </tr>
         </table>
+        </form>
     </body>
 
 </html>
