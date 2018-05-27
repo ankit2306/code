@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        
+            body {
+                background-color:"linen";
+            }
+            
+            p {
+                color:#786688;
+                font-style:italic;
+                text-align:center;
+            }
+            
+            h1 {
+                font-style:italic;
+                color:maroon;
+                text-align:center;
+                font-size:larger;
+                font-family:"Comic Sans MS";
+            }
+            
+            
+            table {
+                background-color:#F96699;
+                border-spacing:15px;
+                border-style:solid;
+                border-color:black;
+                float:center;
+            }
+            
+           td th {
+                color:white;
+                background-color:#FFBBCC;
+            }
+            
+            td {
+                color:white;
+                font-style:italic;
+            }
+            
+            .rowspanformat {
+                color:red;
+                text-align:center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1 id="heading">
+            PRODUCT DETAILS
+        </h1>
+        
+        <p>
+        We welcome you to view the list of products available at our Home Appliance Shop
+        </p>
+    
+        <table div="tableformat">
+            <tr>
+               <td>Product Code</td>
+               <td><th>Product Name</th></td>
+               <td><th>Product Variant</th></td>
+               <td><th>Unit Price<br>(in Rs.)</th></td>
+               <td><th>Product Make</th></td>
+            </tr>
+            <tr>
+                <td>P1457</td>
+                <td>LED Telivision</td>
+                <td>22 inches,42 inches, 52 inches</td>
+                <td>20000<sub>[22 inches]</sub></td>
+                <td rowspan=3 colspan=1 div="rowspanformat" style="background-color:lightgreen;">SAMSUNG</td>
+            </tr>
+            <tr>
+                <td>p145</td>
+                <td>Refrigerator</td>
+                <td>160L,220L</td>
+                <td>25000<sub>[160L]</sub></td>
+            </tr>
+            <tr>
+                <td>p1459</td>
+                <td>Washing Machine</td>
+                <td>Front and Top Loading</td>
+                <td>23000<sub>[Top Load]</sub></td>
+            </tr>
+            <tr>
+                <td>p1460</td>
+                <td>Mixer Grinder</td>
+                <td>Popular,Titanium</td>
+                <td>5000<sub>[popular]</sub></td>
+                <td rowspan=2 colspan=1 div="rowspanformat" style="background-color:lightblue;">PHILIPS</td>
+            </tr>
+            <tr>
+                <td>p1461</td>
+                <td>Microwave Oven</td>
+                <td>16L,19L</td>
+                <td>6000<sub>[16L]</sub></td>
+            </tr>
+        </table>
+    </body>
+</html>
