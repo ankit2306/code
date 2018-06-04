@@ -1,108 +1,58 @@
-<!DOCTYPE html>
+<DOCTYPE! html>
+
 <html>
-    <head>
-        <style>
-            body {
-    background-color:"linen";
+<head>
+
+
+<title>Testing
+</title>
+<script>
+
+var userInput = prompt("Choose between 'rock, paper, and scissor'.");
+var compInput = Math.random();
+
+if (Math.random <= 0.33) {
+    document.write("rock");
 }
-
-p {
-    color:#786688;
-    font-style:italic;
-    text-align:center;
-    text-transform: capitalize;
+else if (Math.random <= 0.66) {
+    document.write("paper");
 }
+else{
+    document.write("scissor");
+};
 
-h1 {
-    font-style:italic;
-    color:maroon;
-    text-align:center;
-    font-size:larger;
-    font-family:"Comic Sans MS";
-    text-transform: capitalize;
-}
+var compare = function(choose1,choose2){
+    if (choose1 === "rock") {
+        if (choose2 === "paper") {
+            return "paper wins";
+        }
+        else {
+            return("rock wins");
+        }
+    };
+    if (choose1 === "paper") {
+        if (choose2 === "rock") {
+            return("paper wins");
+        }
+        else{
+            return("scissor wins");
+        }
+    };
+    if (choose1 === "scissor") {
+        if (choose2 === "paper") {
+            return("scissor wins");
+        }
+        else{
+            return("rock wins");
+        }
+    };
+};
 
+compare(choose1,choose2);
+compare(userInput);
+compare(compInput);
 
-table {
-    background-color:#F96699;
-    border-spacing:15px;
-    border-style:solid;
-    border-color:black;
-    margin-left: auto;
-    margin-right: auto;
-}
+</script>
 
-td th {
-    color:white;
-    background-color:#FFBBCC;
-}
-
-td {
-    color:white;
-    font-style:italic;
-}
-
-.rowspanformat {
-    color:red;
-    text-align:center;
-}
-
-td:hover {
-    color: black;
-}
-
-        </style>>
-    </head>
-    <body>
-        <h1 id="heading">
-            PPRODUCT DETAILS
-        </h1>
-        
-        <p>
-        We welcome you to view the list of products available at our Home Appliance Shop
-        </p>
-    
-        <table> <div class="tableformat">
-            <tr>
-               <th>Product Code</th>
-               <th>Product Name</th>
-               <th>Product Variant</th>
-               <th>Unit Price<br>(in Rs.)</th>
-               <th>Product Make</th>
-            </tr>
-            <tr>
-                <td>P1457</td>
-                <td>LED Telivision</td>
-                <td>22 inches,42 inches, 52 inches</td>
-                <td>20000<sub>[22 inches]</sub></td>
-                <td rowspan=3 colspan=1 class="rowspanformat" style="background-color:lightgreen;">SAMSUNG</td>
-            </tr>
-            <tr>
-                <td>p145</td>
-                <td>Refrigerator</td>
-                <td>160L,220L</td>
-                <td>25000<sub>[160L]</sub></td>
-            </tr>
-            <tr>
-                <td>p1459</td>
-                <td>Washing Machine</td>
-                <td>Front and Top Loading</td>
-                <td>23000<sub>[Top Load]</sub></td>
-            </tr>
-            <tr>
-                <td>p1460</td>
-                <td>Mixer Grinder</td>
-                <td>Popular,Titanium</td>
-                <td>5000<sub>[popular]</sub></td>
-                <td rowspan=2 colspan=1 class="rowspanformat" style="background-color:lightblue;">PHILIPS</td>
-            </tr>
-            <tr>
-                <td>p1461</td>
-                <td>Microwave Oven</td>
-                <td>16L,19L</td>
-                <td>6000<sub>[16L]</sub></td>
-            </tr>
-            </div>
-        </table>
-    </body>
+</head>
 </html>

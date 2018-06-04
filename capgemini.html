@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body {
+                background-color: #CEF6CE;
+            }
+            
+            h1 {
+                color: #08088A;
+                font-style: "verdanta";
+                text-align: center;
+            }
+            
+            table {
+                font-size: 15px;
+            }
+            
+        </style>
+        <script type="text/javascript">
+            function costcalculation() {
+                
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tablecaption>
+                <h1 id="heading">Air cargo Service</h1>
+            </tablecaption>
+            <form action="#" method="post">
+                <tr>
+                    <td>
+                        Customer Logistics Account Number
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter the Unique ID" pattern="[A-Za-z]{4}[_]{1}[0-9]{3}" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Mobile
+                    </td>
+                    <td>
+                        <input type="text" required="required" pattern="[7-9]{1}[0-9]{9}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email-ID
+                    </td>
+                    <td>
+                        <input type="text" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Item to be Shipped
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Item Name" pattern="[A-Za-z ]" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Item Category
+                    </td>
+                    <td>
+                        <select required="required" id="category">
+                            <option value="Electronics">Electronics</option>
+                            <option value="Attires">Attires</option>
+                            <option value="Toys">Toys</option>
+                            <option value="Non Poisonous Food">Non Poisonous Food</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Shipment Address
+                    </td>
+                    <td>
+                        <textarea required="required"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        Item Category
+                    </td>
+                    <td>
+                        <select id="category" required="required">
+                            <option value="London - 1800">London - 1800</option>
+                            <option value="Singapore - 1400">Singapore - 1400</option>
+                            <option value="New York - 3100">New York - 3100</option>
+                            <option value="Mexico City - 3300">Mexico City - 3300</option>
+                            <option value="Tokyo - 2800">Tokyo - 2800</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Weight in Kilograms
+                    </td>
+                    <td>
+                        <input type="textbox" id="kologramval" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Service Type
+                    </td>
+                    <td>
+                        <input type="radio" id="type1"/>Normal
+                        <input type="radio" id="type2"/>Express
+                        <input type="radio" id="type3"/>Platinum
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Book My Consignment" onclick="costcalculation()"/>
+                    </td>
+                    <td>
+                        <input type="reset" value="Clear"/>
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html>
