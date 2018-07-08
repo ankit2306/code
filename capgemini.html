@@ -16,10 +16,32 @@
                 font-size: 15px;
             }
             
+            #rateTable {
+                float: right;
+                text-align: center;
+                border: 0.02rem solid black;
+                padding: 1px 1px;
+            }
+
+            #rateTable td {
+                color:magenta;
+                border: 1px solid saddlebrown;
+                padding: 10px 10px;
+                border-radius: 5px;
+            }
+            
+            #rateTable th {
+                color: darkgreen;
+                border: 10px solid rgb(46, 21, 3);
+                padding: 1px 1px;
+            }
+
         </style>
         <script type="text/javascript">
             function costcalculation() {
-                
+                //alert("Form Submitted !!!");
+                document.getElementById("result").innerHTML="\nYour booking is confirmed !!!";
+                return true;
             }
         </script>
     </head>
@@ -28,13 +50,13 @@
             <tablecaption>
                 <h1 id="heading">Air cargo Service</h1>
             </tablecaption>
-            <form action="#" method="post">
+            <form action="#" method="post" onsubmit="return costcalculation();" autocomplete="on">
                 <tr>
                     <td>
                         Customer Logistics Account Number
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter the Unique ID" pattern="[A-Za-z]{4}[_]{1}[0-9]{3}" required="required"/>
+                        <input type="text" placeholder="Enter the Unique ID" autocomplete="on" pattern="[A-Za-z]{4}[_]{1}[0-9]{3}" required="required"/>
                     </td>
                 </tr>
                 <tr>
@@ -58,7 +80,7 @@
                         Item to be Shipped
                     </td>
                     <td>
-                        <input type="text" placeholder="Item Name" pattern="[A-Za-z ]" required="required"/>
+                        <input type="text" placeholder="Item Name" pattern="[A-Za-z ].{1,}" required="required"/>
                     </td>
                 </tr>
                 <tr>
@@ -101,28 +123,72 @@
                         Weight in Kilograms
                     </td>
                     <td>
-                        <input type="textbox" id="kologramval" required="required"/>
+                        <input type="text" id="kiologramval" required="required"/>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        <datalist id="bihar">
+                            <option value="Patna"></option>
+                            <option value="Gaya"></option>
+                            <option value="Muzaffarpur"></option>
+                        </datalist>
+                        <input list="bihar" id="br_city" required="required"/>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         Service Type
                     </td>
                     <td>
-                        <input type="radio" id="type1"/>Normal
-                        <input type="radio" id="type2"/>Express
-                        <input type="radio" id="type3"/>Platinum
+                        <input type="radio" name="gender" required="required" id="type1"/>Normal
+                        <input type="radio" name="gender" id="type2"/>Express
+                        <input type="radio" name="gender" id="type3"/>Platinum
                     </td>
                 </tr>
                 <tr>
+                    <td>Mark Range(1to100)<input type="range" name="mark" id="markInputId" min="1" max="100" 
+                        oninput="markOutputId.value = markInputId.value">
+                        <output name="markOutputName" id="markOutputId"></output></td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td>
-                        <input type="submit" value="Book My Consignment" onclick="costcalculation()"/>
+                        <input type="submit" value="Book My Consignment"/>
                     </td>
                     <td>
                         <input type="reset" value="Clear"/>
                     </td>
                 </tr>
             </form>
+        </table>
+        <br>
+        <div id="result">
+
+        </div>
+
+        <table id="rateTable">
+            <tr>
+                <th>City</th>
+                <th>Rate (in %)</th>
+            </tr>
+            <tr>
+                <td>Patna</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Gaya</td>
+                <td>9.88</td>
+            </tr>
+            <tr>
+                <td>Muzaffarpur</td>
+                <td>9.89</td>
+            </tr>
         </table>
     </body>
 </html>
