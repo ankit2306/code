@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+body
+{
+background-color:#FF7F50;
+}
+
+h1{
+font-style:italic;
+text-align:center;
+}
+
+form
+{
+margin : 0 auto;
+width:auto;
+}
+</style>
+
+<title>Mobile Prepaid Recharge Service</title>
+</head>
+<body >
+<h1>Mobile Prepaid Recharge Service</h1>
+
+<!--The form should be redirected to SuccessRecharge.html-->
+<form action="SuccessRecharge.html" method="post">
+
+<table align="center">
+<col width="120">
+<col width="200">
+<col width="180">
+<tr>
+<tr>
+<td>Customer Name*</td>
+<!--Make this field as mandatory. For pattern,refer the problem description.-->
+<td><input type="text" name="customerName" pattern="[A-Za-z ]{1,}" required="required"/> </td>
+</tr>
+
+
+<tr>
+<td>Mobile No*</td>
+<!--The maximum length of the text box should be "10".Make this field as mandatory. Write the Place holders.
+For pattern,refer the problem description.-->
+<td><input type="text" name="mobileNo" minlength="10" maxlength="10" placeholder="Enter valid mobile no(10 digits)" pattern="[6-9]{1}[0-9]{9}" required="required"/><br></td>
+</tr>
+
+<tr>
+<td>Service Provider*</td>
+<!--Specify the options for drop down box-->
+<td>
+  <select name="serviceProvider" required="required">
+   <option name="BSNL">BSNL</option>
+   <option name="Idea">Idea</option>
+   <option name="Jio">Jio</option>
+   <option name="Vodafone">Vodafone</option>
+   <option name="Tata Docomo">Tata Docomo</option>
+  </select>
+ </td>
+</tr>
+
+
+<tr>
+<td>Plan Type*</td>
+<!--Specify the options for the radio button-->
+<td>
+    <input type="radio" name="planType" value="Special" required="required">Special
+    <input type="radio" name="planType" value="Top-up" required="required">Top-up 
+</td>
+</tr>
+
+<tr>
+<td>Recharge Amount*</td>
+<!--The maximum length of the text box should be "12".Make this field as mandatory.For pattern,refer the
+problem description-->
+<td><input type="text" name="rechargeAmount" maxlength="12"  pattern="[0-9]{3,}" required="required"/><br></td>
+</tr>
+ 
+<tr>
+<td>Payment mode*</td>
+<!--Specify the options for drop down box-->
+<td>
+ <select name="paymentMode" >
+    <option value="Credit Card">Credit Card</option>
+    <option value="Debit Card">Debit Card</option>
+ </select>
+</td>
+</tr>
+
+<tr>
+<td>Card Number*</td>
+<!--The maximum length of the text box should be "16".Make this field as mandatory.For pattern,refer the
+problem description-->
+<td><input type="text" name="cardNo" maxlength="16"  pattern="[0-9]{16}"  required="required"><br></td>
+</tr>
+
+<tr>
+<td>Card Type*</td>
+<!--Specify the options for the radio button-->
+<td>
+    <input type="radio" name="cardType" value="VISA" required="required">VISA
+    <input type="radio" name="cardType" value="MASTER" required="required">MASTER
+</td>
+</tr>
+
+<tr>
+<td>CVV Number*</td>
+<!--The maximum length of the text box should be "3".Make this field as mandatory.For pattern,refer the
+problem description.The value should appear as "***"-->
+<td><input type="password" name="cvvNo"  maxlength="3" pattern="[0-9]{3}" required="required"><br></td>
+</tr>
+
+                  
+
+<tr>
+<td><input type="submit" name="submit" value="Make Payment"> </td>
+<td><input type="reset" name="reset" value="Clear"> </td>
+</tr>
+
+
+</table>
+
+</form>
+
+</body>
+</html>
+
