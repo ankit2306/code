@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+
+
+function CalcIntAmtPerMonth()
+{  
+    try{
+        <!-- Declare the required local variables -->
+        var roi=document.getElementById("rateOfInterest").value;
+        var loanAmt=document.getElementById("loanAmount").value;
+
+	    <!-- Write  the code  for calculating the Interest Amount to be paid per month -->
+        var AmtMonth=roi*loanAmt/1200;
+        document.getElementById("intAmtMonth").value=Math.round(AmtMonth);
+        return Math.round(AmtMonth);
+      }catch(err){return false;}
+}
+	
+
+
+function CalculateLoanEMIAmount()
+{
+       try{
+	
+	     <!-- Declare the required local variables -->
+	     var loanAmt=document.getElementById("loanAmount").value;
+	     var loanTnr=document.getElementById("loanTenure").value;
+	     var AmtMonth=CalcIntAmtPerMonth();
+
+	     <!-- Write  the code  for calculating the EMI Amount to be paid for the Loan taken -->
+         var loanEmi=(loanAmt/loanTnr)+AmtMonth;
+         document.getElementById("loanEMIAmount").value=Math.round(loanEmi);
+         return Math.round(loanEmi);
+         }catch(err){return false;}
+}
+
+
+
+function CalcTotalIntPayable()
+{ 
+         try{
+              
+        <!-- Declare the required local variables -->
+        var AmtMonth=CalcIntAmtPerMonth();
+        var loanTnr=document.getElementById("loanTenure").value;
+
+       	<!-- Write  the code  for calculating the total interest payable -->
+       	var totPay=AmtMonth*loanTnr;
+       	document.getElementById("interestAmount").value=Math.round(totPay);
+        return Math.round(totPay);
+         }catch(err){return false;}
+}
+		
+	
+
+
+function CalculateTotalPayment()
+{
+     try{
+    
+        <!-- Declare the required local variables -->
+        var loanAmt=document.getElementById("loanAmount").value;
+        var totInt=CalcTotalIntPayable();
+	
+	    <!-- Write  the code  for calculating the total payment -->
+	    var totPay=loanAmt+totInt;
+	    document.getElementById("totalPayment").innerHTML+="Math.round(totPay)";
+        return Math.round(totPay);
+    }catch(err){return false;}
+}
+
+</script>
+<style type="text/css">
+body
+{
+background-color:#FF77AA;
+}
+
+h1{
+font-style:italic;
+text-align:center;
+}
+
+form
+{
+margin:0 auto;
+width:auto;
+}
+</style>
+
+<title>EMI Calculator</title>
+</head>
+<body>
+<h1>EMI Calculator</h1>
+
+<form>
+
+<table align="center">
+<col width="200">
+<col width="300">
+<col width="300">
+
+<tr>
+<td>Loan Amount</td>
+<td><input type="number" name="loanAmount" id="loanAmount" required="required"></td>
+</tr>
+
+<tr>
+<td>Rate Of Interest</td>
+<td><input type="number" name="rateOfInterest" id="rateOfInterest" required="required">% per Year</td>
+</tr>
+
+
+<tr>
+<td>Loan Tenure</td>
+<td><input type="number" name="loanTenure" id="loanTenure" required="required">in Months</td>
+</tr>
+
+<tr>
+<td>Interest Amount Per Month</td>
+<!-- Invoke the function CalcIntAmtPerMonth() in the event handler -->
+<td><input type="number"   name="intAmtMonth" id="intAmtMonth"   required="required" onfocus="CalcIntAmtPerMonth()"></td>
+</tr>
+
+
+
+
+<tr>
+<td>Loan EMI Amount</td>
+<td>
+<!-- Invoke the function CalculateLoanEMIAmount() in the event handler -->
+<input type="number" contenteditable="false"  name="loanEMIAmount" id="loanEMIAmount" required="required" onfocus="CalculateLoanEMIAmount()"></td>
+</tr>
+ 
+<tr>
+<td>Total Interest Payable</td>
+<td>
+<!-- Invoke the function CalcTotalIntPayable() in the event handler -->
+ <input  type="number" contenteditable="false" name="interestAmount" id="interestAmount" required="required" onfocus="CalcTotalIntPayable()"></td>
+</tr>
+
+<tr>
+<td>Total Payment</td>
+<td>
+<p id="totalPayment"></p>
+</td>
+</tr>
+
+
+                  
+
+<tr>
+    <!-- Invoke the function  CalculateTotalPayment() in the event handler -->
+<td><input type="submit" name="submit" value="Submit"  onclick="CalculateTotalPayment()"></td>
+<td><input type="reset" name="reset" value="Clear"> </td>
+</tr>
+
+
+</table>
+
+</form>
+
+</body>
+</html>
