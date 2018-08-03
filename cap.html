@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+body
+{
+background-color:#00FFFF;
+}
+
+h1{
+font-style:italic;
+text-align:center;
+}
+
+form
+{
+margin : 0 auto;
+width:auto;
+}
+
+
+</style>
+
+<title>Sunith College of Engineering</title>
+</head>
+<body >
+<h1>Student Performance Rating</h1>
+
+<!--The form should be redirected to Success.html-->
+<form action="Sucess.html" method="POST">
+<table align="center">
+<col width="100">
+<col width="200">
+<col width="180">
+<tr>
+<td>Student ID</td>
+<!--Make this field as mandatory. Write the Place holders-->
+<td><input type="text" name="studentId" id="studentId" required="required" pattern="[A-Za-z0-9]{1,}" placeholder="Enter the ID"> </td>
+</tr>
+
+<tr>
+<td>Student Name</td>
+<!--Make this field as mandatory. Write the Place holders-->
+<td><input type="text" name="studentName" id="studentName" required="required" pattern="[A-Za-z ]{1,}" placeholder="Enter the name"> </td>
+</tr>
+
+<tr>
+<td>Branch Name</td>
+<!--Specify the options for drop down box-->
+<td>
+  <select name="branchName" id="branchName" required="required">
+    <option value="ECE" name="ECE">ECE</option>
+    <option value="CSE" name="CSE">CSE</option>
+    <option value="Mechanical" name="Mechanical">Mechanical</option>
+    <option value="EEE" name="EEE">EEE</option>
+    <option value="Mechatronics" name="Mechatronics">Mechatronics</option>
+  </select>
+ </td>
+</tr>
+
+<tr>
+<td>Semester</td>
+<!--Specify the options for drop down box-->
+<td>
+  <select name="semester" id="semester" required="required">
+    <option value=1 name="I">I</option>
+    <option value=2 name="II">II</option>
+    <option value=3 name="III">III</option>
+    <option value=4 name="IV">IV</option>
+    <option value=5 name="V">V</option>
+    <option value=6 name="VI">VI</option>
+    <option value=7 name="VII">VII</option>
+    <option value=8 name="VIII">VIII</option>
+  </select>
+ </td>
+</tr>
+
+<tr>
+<td>No Of Courses Taken </td>
+<!-- Make this field as mandatory.Specify the range from 1 to 10.-->
+<td><input type="number" name="courseNo" id="courseNo" required="required" min=1 max=5>  </tr>
+                              
+<tr>
+<td>E-mail</td>
+<!--Make this field as mandatory. Write the Place holders-->
+<td><input type="email" name="studentEmail" id="studentEmail" required="required" placeholder="abc@gmail.com"></td>
+</tr>
+
+<tr>
+<td>Over-All Rating </td>
+<!-- Specify the range from 1 to 10.-->
+<!-- Specify that 1 is the Highest Rating whereas 5 is the Lowest Rating -->
+<td><input type="number" name="rating" id="rating" required="required" min=1 max=5></td>
+<td>1 is the Highest Rating whereas 5 is the Lowest Rating</td>
+</tr>
+
+<tr>
+<td><input type="submit" name="submit" value="Save Rating"> </td>
+<td><input type="reset" name="reset" value="Clear"> </td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
